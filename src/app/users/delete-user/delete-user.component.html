@@ -1,0 +1,14 @@
+<h2>Você deseja remover este usuário?</h2>
+
+<!--So vai listar caso a varivael não seja indefinida>-->
+<div *ngIf="user">
+    <label>Id: <strong>{{user.id}}</strong></label>
+    <br><br>
+    <label>Nome: <strong>{{user.first_name}}</strong></label>
+    <br><br>
+    <label>Sobrenome: <strong>{{user.last_name}}</strong></label>
+    <br><br>
+    <button (click)="delete()">Confirmar</button>
+    <button (click)="cancel()">Cancel</button>
+</div>
+

@@ -1,0 +1,68 @@
+<mat-toolbar>
+  <span>Inclusao - {{_nomecmp}}</span>
+</mat-toolbar>
+
+<mat-card class="my-card">
+<mat-card-content>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)" class="my-form">
+
+    <!-- <mat-form-field class="full-width">
+      <mat-label>Empresa</mat-label>
+      <input hidden matInput formControlName="empresa" [(ngModel)]="request.empresa" required>
+    </mat-form-field> -->
+    <input hidden matInput formControlName="empresa" [(ngModel)]="_empresa" required>
+
+    <!-- <mat-form-field class="full-width">
+      <mat-label>Filial</mat-label>
+      <input matInput formControlName="filial"  [(ngModel)]="request.filial" required>
+    </mat-form-field> -->
+    <input hidden atInput formControlName="filial"  [(ngModel)]="_filial" required>
+
+    <!-- <mat-form-field class="full-width">
+      <mat-label>Matricula</mat-label>
+      <input matInput formControlName="mat"     [(ngModel)]="request.mat" required>
+    </mat-form-field> -->
+    <input hidden matInput formControlName="mat"     [(ngModel)]="_mat" required>
+
+    <!-- <mat-form-field class="full-width">
+      <mat-label>Colaborador</mat-label>
+      <input matInput formControlName="nomecmp" [(ngModel)]="request.nomecmp" required>
+    </mat-form-field> -->
+    <input hidden matInput formControlName="nomecmp" [(ngModel)]="_nomecmp" required>
+
+    <!-- <mat-form-field class="full-width">
+      <mat-label>Funcao</mat-label>
+      <input matInput formControlName="funcao"  [(ngModel)]="request.funcao" required>
+    </mat-form-field> -->
+    <input hidden matInput formControlName="funcao"  [(ngModel)]="_funcao" required>
+
+
+    <mat-form-field class="full-width">
+      <mat-label>Data</mat-label>
+      <input readonly matInput formControlName="_data"   [(ngModel)]="dtCustom" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Hora</mat-label>
+      <input readonly matInput formControlName="_time"   [(ngModel)]="hrAtual" required>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Temperatura</mat-label>
+      <input matInput type="number" id="text-focus" formControlName="temp" [(ngModel)]="ntemp" 
+      min="34.0" step="0.1" max="40" temp-mask="00,0" maxlength="4" required>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button type="submit" color="primary" [disabled]="registerForm.invalid">Salvar</button>
+      <button mat-raised-button (click)="cancel()" color="warn">Cancelar</button>
+    </mat-card-actions>
+
+  </form>
+  
+</mat-card-content>
+
+</mat-card>
+<br>
+<span style="color:white">{{registerForm.value|json}}</span>
