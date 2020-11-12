@@ -9,4 +9,5 @@ Aplicação para cadastro simples de temperatura em Angular/REST Adpvl.
 Tecnologias utilizadas: 
 
 * Angular Cli 
+* Angular Material UI
 * ADVPL - Advanced Protheus Language (Backend).
